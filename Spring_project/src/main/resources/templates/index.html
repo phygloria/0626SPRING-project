@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,28 +12,26 @@
 </head>
 
 <body>
-<div class="index_back_img">
-    <div class="index_search_box">
-        <form>
-            <div class="movie_search ">
-                <input type="text" oninput="handleOnInput(this)" placeholder="ID : 우승엽 바보 아이디 ">
+    <div class="index_back_img">
+        <div class="index_search_box">
+            <form th:action="@{/login}" method="post">
+                <div class="movie_search">
+                    <input type="text" name="username" placeholder="ID : 우승엽 바보 아이디">
+                </div>
+                <div class="movie_search password">
+                    <input type="password" name="password" placeholder="PW : 송재희 빨리해라">
+                </div>
+                <div class="Df_JC">
+
+                        <button type="submit" class="enter_btn">로그인 하기</button>
+
+                </div>
+            </form>
+            <div style="margin-top: 10px">
+                <a href="#">회원가입</a>
             </div>
-            <div class="movie_search password" >
-                <input type="password" placeholder="PW : 송재희 빨리해라">
-            </div>
-        </form>
-        <div class=" Df_JC">
-            <div class="enter_btn">
-                <a th:href="@{/page/subpage}">
-                    <p>로그인 하기</p>
-                </a>
-            </div>
-        </div>
-        <div style="margin-top: 10px">
-            <a href="#">회원가입</a>
         </div>
     </div>
-</div>
 </body>
 
 </html>
