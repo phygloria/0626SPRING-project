@@ -10,6 +10,7 @@
     <link rel="stylesheet" th:href="@{/css/subPageAll.css}">
     <link rel="stylesheet" th:href="@{/css/MinJoo/minjoo.css}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script th:src="@{/js/Minjoo/Minjoo.js}"></script>
 </head>
 
 <body class="bodyBack_Lee">
@@ -43,7 +44,7 @@
             <main>
                 <article>
                     <h2 class="ti">Github에 branch 완벽이해</h2>
-                    <img class="bran" th:src="@{/img/MinJoo/branch.png}">
+                    <img class="bran" th:src="@{/img/MinJoo/branch.png}"/>
                     <p>branch는 우리가 서비스하는 프로그램의 버전관리를 위해 이용하는 것인데
                         위에 사진으로도 사용이유가 이해가지않는다면 구글링하여 열심히 공부하자!
                     아니면 밑에 <c>git링크</c>를 읽어보자</p>
@@ -104,15 +105,6 @@ git push origin feature
 
                 </div>
             </div>
-            <script>
-                $(document).ready(function() {
-                    $(".que").click(function() {
-                        $(this).next(".anw").stop().slideToggle(500);
-                        $(this).toggleClass('on').siblings().removeClass('on');
-                        $(this).next(".anw").siblings(".anw").slideUp(300); // Only one panel open at a time
-                    });
-                });
-            </script>
         </div>
     </div>
     <!-- 영화 소개 -->
