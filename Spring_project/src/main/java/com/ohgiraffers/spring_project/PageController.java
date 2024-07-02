@@ -17,12 +17,10 @@ public class PageController {
         return "page/SeungYeop/SeungYeop";
     }
 
-    // 에러
     @GetMapping("/daYoungPage")
     public String DayoungPage() {
         return "page/Dayoung/Dayoung";
     }
-    // 에러
 
     @GetMapping("/hyoJooPage")
     public String hyoJooPage() {

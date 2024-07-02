@@ -66,9 +66,9 @@ public class PageControllerPath {
             String[] parts = title.split(" ");
             if (parts.length == 3) {
                 String pageNumber = parts[2];
-                return "redirect:/minJooPage?pageNumber=" + pageNumber;
+                return "redirect:/MinJooPage?pageNumber=" + pageNumber;
             }
-            return "redirect:/minJooPage?pageNumber=1";
+            return "redirect:/MinJooPage?pageNumber=1";
         }
 
         return "redirect:/";
