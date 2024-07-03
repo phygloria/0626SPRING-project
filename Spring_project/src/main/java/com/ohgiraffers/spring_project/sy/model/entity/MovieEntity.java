@@ -2,6 +2,7 @@ package com.ohgiraffers.spring_project.sy.model.entity;
 
 
 import jakarta.persistence.*;
+import lombok.Builder;
 
 @Entity
 @Table(name = "movie")
@@ -18,7 +19,7 @@ public class MovieEntity {
     private String subtitle;
 
     @Column
-    private String imageUrl;
+    private String image_url;
 
     @Column
     private String genre;
@@ -39,35 +40,24 @@ public class MovieEntity {
     private String audience;
 
     @Column
-    private String originalLink;
-
-    @Column
     private String description;
 
-    @Column
-    private String accordionTitle;
-
-    @Column
-    private String anw;
 
     public MovieEntity() {
     }
 
-    public MovieEntity(Long id, String title, String subtitle, String imageUrl, String genre, String country, String duration, String releaseDate, String rating, String audience, String originalLink, String description, String accordionTitle, String anw) {
+    public MovieEntity(Long id, String title, String subtitle, String image_url, String genre, String country, String duration, String releaseDate, String rating, String audience, String description) {
         this.id = id;
         this.title = title;
         this.subtitle = subtitle;
-        this.imageUrl = imageUrl;
+        this.image_url = image_url;
         this.genre = genre;
         this.country = country;
         this.duration = duration;
         this.releaseDate = releaseDate;
         this.rating = rating;
         this.audience = audience;
-        this.originalLink = originalLink;
         this.description = description;
-        this.accordionTitle = accordionTitle;
-        this.anw = anw;
     }
 
     public Long getId() {
@@ -94,12 +84,12 @@ public class MovieEntity {
         this.subtitle = subtitle;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImage_url() {
+        return image_url;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
     }
 
     public String getGenre() {
@@ -150,14 +140,6 @@ public class MovieEntity {
         this.audience = audience;
     }
 
-    public String getOriginalLink() {
-        return originalLink;
-    }
-
-    public void setOriginalLink(String originalLink) {
-        this.originalLink = originalLink;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -166,39 +148,20 @@ public class MovieEntity {
         this.description = description;
     }
 
-    public String getAccordionTitle() {
-        return accordionTitle;
-    }
-
-    public void setAccordionTitle(String accordionTitle) {
-        this.accordionTitle = accordionTitle;
-    }
-
-    public String getAnw() {
-        return anw;
-    }
-
-    public void setAnw(String anw) {
-        this.anw = anw;
-    }
-
     @Override
     public String toString() {
         return "MovieEntity{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", subtitle='" + subtitle + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
+                ", image_url='" + image_url + '\'' +
                 ", genre='" + genre + '\'' +
                 ", country='" + country + '\'' +
                 ", duration='" + duration + '\'' +
                 ", releaseDate='" + releaseDate + '\'' +
                 ", rating='" + rating + '\'' +
                 ", audience='" + audience + '\'' +
-                ", originalLink='" + originalLink + '\'' +
                 ", description='" + description + '\'' +
-                ", accordionTitle='" + accordionTitle + '\'' +
-                ", anw='" + anw + '\'' +
                 '}';
     }
 }
