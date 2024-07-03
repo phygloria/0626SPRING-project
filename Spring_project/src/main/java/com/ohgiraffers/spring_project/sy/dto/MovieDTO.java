@@ -21,6 +21,37 @@ public class MovieDTO {
     public MovieDTO() {
     }
 
+    public MovieDTO(MovieEntity movieEntity) {
+        this.id = movieEntity.getId();
+        this.title = movieEntity.getTitle();
+        this.subtitle = movieEntity.getSubtitle();
+        this.image_url = movieEntity.getImage_url();
+        this.genre = movieEntity.getGenre();
+        this.country = movieEntity.getCountry();
+        this.duration = movieEntity.getDuration();
+        this.releaseDate = movieEntity.getReleaseDate();
+        this.rating = movieEntity.getRating();
+        this.audience = movieEntity.getAudience();
+        this.description = movieEntity.getDescription();
+
+    }
+
+    public MovieEntity toMovieEntity() {
+        return new MovieEntity(
+                this.id,
+                this.title,
+                this.subtitle,
+                this.image_url,
+                this.genre,
+                this.country,
+                this.duration,
+                this.releaseDate,
+                this.rating,
+                this.audience,
+                this.description
+        );
+    }
+
     public MovieDTO(Long id, String title, String subtitle, String image_url, String genre, String country, String duration, String releaseDate, String rating, String audience, String description) {
         this.id = id;
         this.title = title;

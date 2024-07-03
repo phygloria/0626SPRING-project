@@ -1,6 +1,10 @@
 package com.ohgiraffers.spring_project;
 
 
+import com.ohgiraffers.spring_project.sy.dto.MovieDTO;
+import com.ohgiraffers.spring_project.sy.model.entity.MovieEntity;
+import com.ohgiraffers.spring_project.sy.repository.MovieRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +16,45 @@ import java.util.Map;
 @Controller
 public class PageController {
 
+    private final MovieRepository movieRepository;
+
+    public PageController(MovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
+    }
+
     @GetMapping("/seungYeopPage")
     public String SeungYeop() {
         return "page/SeungYeop/SeungYeop";
     }
+
+    @GetMapping("/post")
+    public String post(){
+        return "page/SeungYeop/Post";
+    }
+
+    @Transactional
+    public Long savePost(MovieDTO movieDTO){
+        MovieEntity movieEntity = movieDTO.toMovieEntity();
+        movieRepository.save(movieEntity);
+        return movieEntity.getId();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @GetMapping("/daYoungPage")
     public String DayoungPage() {
