@@ -4,7 +4,9 @@ package com.ohgiraffers.spring_project;
 import com.ohgiraffers.spring_project.sy.dto.MovieDTO;
 import com.ohgiraffers.spring_project.sy.model.entity.MovieEntity;
 import com.ohgiraffers.spring_project.sy.repository.MovieRepository;
+import com.ohgiraffers.spring_project.sy.service.MovieService;
 import jakarta.transaction.Transactional;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,28 +18,45 @@ import java.util.Map;
 @Controller
 public class PageController {
 
-    private final MovieRepository movieRepository;
 
-    public PageController(MovieRepository movieRepository) {
-        this.movieRepository = movieRepository;
+    private final MovieService movieService;
+
+    public PageController(MovieService movieService) {
+        this.movieService = movieService;
     }
 
     @GetMapping("/seungYeopPage")
-    public String SeungYeop() {
+    public String SeungYeop(@RequestParam(defaultValue = "1") int pageNumber, Model model) {
+        int pageSize = 1; // 한 페이지에 하나의 영화만 표시
+        Page<MovieEntity> moviePage = movieService.getMoviesByPage(pageNumber, pageSize);
+        model.addAttribute("moviePage", moviePage);
         return "page/SeungYeop/SeungYeop";
     }
 
-    @GetMapping("/post")
-    public String post(){
-        return "page/SeungYeop/Post";
-    }
 
-    @Transactional
-    public Long savePost(MovieDTO movieDTO){
-        MovieEntity movieEntity = movieDTO.toMovieEntity();
-        movieRepository.save(movieEntity);
-        return movieEntity.getId();
-    }
+
+//    private final MovieRepository movieRepository;
+//
+//    public PageController(MovieRepository movieRepository) {
+//        this.movieRepository = movieRepository;
+//    }
+//
+//    @GetMapping("/seungYeopPage")
+//    public String SeungYeop() {
+//        return "page/SeungYeop/SeungYeop";
+//    }
+//
+//    @GetMapping("/post")
+//    public String post(){
+//        return "page/SeungYeop/Post";
+//    }
+//
+//    @Transactional
+//    public Long savePost(MovieDTO movieDTO){
+//        MovieEntity movieEntity = movieDTO.toMovieEntity();
+//        movieRepository.save(movieEntity);
+//        return movieEntity.getId();
+//    }
 
 
 
