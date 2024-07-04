@@ -9,14 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-
-@RequestMapping("/login")
-
+@RequestMapping("/")
 public class IndexController {
 
 
-    @GetMapping
-
+    @GetMapping("/index")
     public String index() {
 
         return "index";

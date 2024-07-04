@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class Subpage {
 
-        @GetMapping("/")
+        @GetMapping("/subpage")
         public String subPage() {
             return "page/subpage";
         }

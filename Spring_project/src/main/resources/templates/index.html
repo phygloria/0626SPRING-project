@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -15,6 +15,9 @@
     <div class="index_back_img">
         <div class="index_search_box">
             <form th:action="@{/login}" method="post">
+                <div sec:authorize="hasAnyAuthority('USER')">
+
+                </div>
                 <div class="movie_search">
                     <input type="text" name="username" placeholder="ID : 우승엽 바보 아이디">
                 </div>

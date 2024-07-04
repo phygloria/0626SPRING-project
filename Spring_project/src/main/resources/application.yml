@@ -5,9 +5,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/jaehee
-    password: root
-    username: root
+    url: jdbc:mysql://localhost:3306/movie
+    password: movie
+    username: movie
   jpa:
     show-sql: true
     properties:
