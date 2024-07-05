@@ -1,6 +1,5 @@
 package com.ohgiraffers.spring_project.sy.service;
 
-import com.ohgiraffers.spring_project.sy.model.entity.MovieEntity;
 import com.ohgiraffers.spring_project.sy.repository.MovieRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

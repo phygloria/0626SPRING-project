@@ -1,4 +1,4 @@
-package com.ohgiraffers.spring_project;
+package com.ohgiraffers.spring_project.global.index;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

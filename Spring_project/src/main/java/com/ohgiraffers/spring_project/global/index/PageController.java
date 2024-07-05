@@ -1,19 +1,12 @@
-package com.ohgiraffers.spring_project;
+package com.ohgiraffers.spring_project.global.index;
 
 
-import com.ohgiraffers.spring_project.sy.dto.MovieDTO;
-import com.ohgiraffers.spring_project.sy.model.entity.MovieEntity;
-import com.ohgiraffers.spring_project.sy.repository.MovieRepository;
 import com.ohgiraffers.spring_project.sy.service.MovieService;
-import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Controller
 public class PageController {
@@ -32,6 +25,20 @@ public class PageController {
         model.addAttribute("moviePage", moviePage);
         return "page/SeungYeop/SeungYeop";
     }
+
+    @GetMapping("/index")
+    public String index() {
+
+        return "index";
+
+    }
+
+    @GetMapping("/subpage")
+    public String subPage() {
+        return "page/subpage";
+    }
+
+
 
 
 
